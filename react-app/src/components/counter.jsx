@@ -6,10 +6,18 @@ class Counter extends Component {
         let classes ="badge m-2 badge-";
         classes += this.props.counter.value === 0 ? "warning" : "primary";
         return (
-            <div>
+            <div className="row">
+                <div className="col-1">
                 <span className={classes}>{this.formatCount()}</span>
-                <button onClick={() => this.props.onIncrement(this.props.counter)} className="btn m-2 btn-secondary">Increment</button>
-                <button onClick={() => this.props.onDelete (this.props.counter.id)} className="btn m-2 btn-danger">Delete</button>
+                </div>
+                <div className="col">
+                <button onClick={() => this.props.onIncrement(this.props.counter)} className="btn m-2 btn-secondary">+</button>
+                <button onClick={() => this.props.onDecrement(this.props.counter)} className="btn m-2 btn-secondary"
+                disabled={this.props.counter.value===0 ? "disabled" : ""}
+                >-</button>
+                <button onClick={() => this.props.onDelete (this.props.counter.id)} className="btn m-2 btn-danger">×</button>
+                </div>
+                
             </div>
             
         );
