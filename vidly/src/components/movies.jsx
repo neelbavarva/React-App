@@ -18,8 +18,8 @@ class Movies extends Component {
             return <p>There are no movies in the database</p>
         return ( 
             <React.Fragment>
-            <p>Showing {count} movies in the database</p>
-            <table className="table">
+            <h6 className="m-3">Showing {count} movies in the database</h6>
+            <table className="table m-2">
                 <thead>
                     <tr>
                         <th>Title</th>
@@ -43,7 +43,7 @@ class Movies extends Component {
                 </tbody>
             </table>
         </React.Fragment>
-        
+
         );
     }
 }
