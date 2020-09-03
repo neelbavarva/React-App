@@ -43,25 +43,20 @@ class Movies extends Component {
         this.setState({currentPage:page});
     };
 
-    handleSort = path => {
-        const sortColumn={...this.state.sortColumn};
-        if(sortColumn.path===path)
-            sortColumn.order=sortColumn.order==="asc"?"desc":"asc";
-        else{
-            sortColumn.path=path;
-            sortColumn.order="asc";
-        }
-        this.setState({sortColumn})
+    handleSort = sortColumn => {
+        
+        this.setState({sortColumn});
     };
 
     
 
     render() { 
         const {length: count} = this.state.movies;
-        const{pageSize,currentPage,movies:allMovies, selectedGenre, sortColumn} = this.state;
+        const{pageSize,currentPage, movies:allMovies, selectedGenre, sortColumn} = this.state;
 
         if(count===0 ) 
             return <h6 className="m-3">There are no movies in the database</h6>
+        
         const filtered = selectedGenre && selectedGenre._id ? allMovies.filter(
             m=>m.genre._id===selectedGenre._id
         ):allMovies;
@@ -85,6 +80,7 @@ class Movies extends Component {
                 onLike={this.handleLike}
                 onDelete={this.handleDelete}
                 onSort={this.handleSort}
+                sortColumn={sortColumn}
             />
 
             <div className="m-3">
