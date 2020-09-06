@@ -66,7 +66,8 @@ class Movies extends Component {
         return ( 
 
             <div>
-            <h6 className="m-4">Showing {filtered.length} movies in the database</h6>
+                 <h6 className="m-4">Showing {filtered.length} movies in the database</h6>
+            
             <div className="row">
             <div className="col-2 m-4">
                     <ListGroup 
@@ -92,10 +93,7 @@ class Movies extends Component {
             </div> 
             </div>
             
-            
         </div>
-
-        
 
         );
     }
