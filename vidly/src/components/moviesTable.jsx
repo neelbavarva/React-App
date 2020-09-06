@@ -3,11 +3,13 @@ import Like from './common/like';
 import TableHeader from './common/tableHeader';
 import TableBody from './common/tableBody';
 import Table from './common/table';
+import {Link} from 'react-router-dom';
+import { fromPairs } from 'lodash';
 
 class MoviesTable extends Component {
 
     columns= [
-        {path:'title',lable :'Title'},
+    {path:'title',lable :'Title', content: movie => <Link to = {`/movies/${movie._id}`}>{movie.title}</Link> },
         {path:'genre.name',lable :'Genre'},
         {path:'numberInStock',lable :'Stock'},
         {path:'dailyRentalRate',lable :'Rate'},
