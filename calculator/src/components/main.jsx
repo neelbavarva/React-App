@@ -87,7 +87,7 @@ class Main extends Component {
         return (
             <div className="App"><br/><br/>
                 <div className="row">
-                    <div className="input offset-5">{this.state.input}</div>
+                <h4 className="offset-5"><span class="badge badge-light offset-5">{this.state.input}</span></h4>
                 </div><br/>
                 <div className="col">
                 <button onClick={() => this.addToInput(7)} className="btn btn-primary m-2">7</button>
@@ -104,12 +104,12 @@ class Main extends Component {
                 <button onClick={() => this.handleAdd()} className="btn btn-warning m-2">+</button><br/>
                 <button onClick={() => this.handleDecimal()}className="btn btn-primary m-2">.</button>
                 <button onClick={() => this.addToInput(0)}className="btn btn-primary m-2">0</button>
-                <button onClick={() => this.showAns()}className="btn btn-warning m-2">=</button>
+                <button onClick={() => this.showAns()}className="btn btn-success m-2">=</button>
                 <button onClick={() => this.handleSub()}className="btn btn-warning m-2">-</button><br/>
                 <button onClick={() => this.clearInput()}className="btn btn-danger m-2">C L E A R</button>
                 </div>
 
-                <br/><br/><h2>Handling decimal and handling zero left</h2>
+                <br/><br/><h2>Handling decimal, handling zero, BDMAS</h2>
                 
             </div>
         );
