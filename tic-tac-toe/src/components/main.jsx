@@ -25,10 +25,13 @@ class Main extends Component {
         btn7clr : "m-2 btn btn-primary",
         btn8clr : "m-2 btn btn-primary",
         btn9clr : "m-2 btn btn-primary",
-        color : "m-2 btn btn-primary"
+        winOf1: 0,
+        winOf2: 0,
+        
     }
 
    handlePlay = () => {
+       
        this.setState({clicks : 0});
        this.setState({tie : ""});
        this.setState({game : ""});
@@ -51,7 +54,10 @@ class Main extends Component {
        this.setState({btn7clr : "m-2 btn btn-primary"});
        this.setState({btn8clr : "m-2 btn btn-primary"});
        this.setState({btn9clr : "m-2 btn btn-primary"});
-       this.setState({color : "m-2 btn btn-primary"});
+       
+       this.setState({winOf1 : this.state.winOf1 + 1});
+       
+       this.setState({winOf2 : this.state.winOf2 + 1});
        
    }
 
@@ -71,7 +77,7 @@ class Main extends Component {
         }
         else {
             this.setState({btn1 : 2});
-            this.setState({btn1clr : "m-2 btn btn-info"});
+            this.setState({btn1clr : "m-2 btn btn-success"});
             console.log("else called");
         }
 
@@ -92,7 +98,7 @@ class Main extends Component {
         }
         else {
             this.setState({btn2 : 2});
-            this.setState({btn2clr : "m-2 btn btn-info"});
+            this.setState({btn2clr : "m-2 btn btn-success"});
         }
         console.log(this.state.btn2);
     }
@@ -111,7 +117,7 @@ class Main extends Component {
         }
         else {
             this.setState({btn3 : 2});
-            this.setState({btn3clr : "m-2 btn btn-info"});
+            this.setState({btn3clr : "m-2 btn btn-success"});
         }
         console.log(this.state.btn3);
     }
@@ -130,7 +136,7 @@ class Main extends Component {
         }
         else {
             this.setState({btn4 : 2});
-            this.setState({btn4clr : "m-2 btn btn-info"});
+            this.setState({btn4clr : "m-2 btn btn-success"});
         }
     }
 
@@ -148,7 +154,7 @@ class Main extends Component {
         }
         else {
             this.setState({btn5 : 2});
-            this.setState({btn5clr : "m-2 btn btn-info"});
+            this.setState({btn5clr : "m-2 btn btn-success"});
         }
     }
 
@@ -166,7 +172,7 @@ class Main extends Component {
         }
         else {
             this.setState({btn6 : 2});
-            this.setState({btn6clr : "m-2 btn btn-info"});
+            this.setState({btn6clr : "m-2 btn btn-success"});
         }
     }
 
@@ -184,7 +190,7 @@ class Main extends Component {
         }
         else {
             this.setState({btn7 : 2});
-            this.setState({btn7clr : "m-2 btn btn-info"});
+            this.setState({btn7clr : "m-2 btn btn-success"});
         }
     }
 
@@ -202,7 +208,7 @@ class Main extends Component {
         }
         else {
             this.setState({btn8 : 2});
-            this.setState({btn8clr : "m-2 btn btn-info"});
+            this.setState({btn8clr : "m-2 btn btn-success"});
         }
     }
 
@@ -220,77 +226,109 @@ class Main extends Component {
         }
         else {
             this.setState({btn9 : 2});
-            this.setState({btn9clr : "m-2 btn btn-info"});
+            this.setState({btn9clr : "m-2 btn btn-success"});
         }
     }
 
     
 
     render() { 
+        let answer = "";
         if(this.state.btn1=== 1 && this.state.btn2=== 1 && this.state.btn3=== 1){
-            return "player 1 won";
+            answer+= "Player 1 won";
+            
+            // return "Player 1 won";
         }
         else if(this.state.btn1=== 2 && this.state.btn2=== 2 && this.state.btn3=== 2){
-            return "player 2 won";
+            // return "Player 2 won";
+            answer+= "Player 2 won";
         } 
         //row1
         else if(this.state.btn4=== 1 && this.state.btn5=== 1 && this.state.btn6=== 1){
-            return "player 1 won";
+            // return "Player 1 won";
+            answer+= "Player 1 won";
         }
         else if(this.state.btn4=== 2 && this.state.btn5=== 2 && this.state.btn6=== 2){
-            return "player 2 won";
+            // return "Player 2 won";
+            answer+= "Player 2 won";
         }
         //row2
         else if(this.state.btn7=== 1 && this.state.btn8=== 1 && this.state.btn9=== 1){
-            return "player 1 won";
+            // return "Player 1 won";
+            answer+= "Player 1 won";
         }
         else if(this.state.btn7=== 2 && this.state.btn8=== 2 && this.state.btn9=== 2){
-            return "player 2 won";
+            // return "Player 2 won";
+            answer+= "Player 2 won";
         }
         //row3
         else if(this.state.btn1=== 1 && this.state.btn4=== 1 && this.state.btn7=== 1){
-            return "player 1 won";
+            // return "Player 1 won";
+            answer+= "Player 1 won";
         }
         else if(this.state.btn1=== 2 && this.state.btn4=== 2 && this.state.btn7=== 2){
-            return "player 2 won";
+            // return "Player 2 won";
+            answer+= "Player 2 won";
         }
         //col1
         else if(this.state.btn2=== 1 && this.state.btn5=== 1 && this.state.btn8=== 1){
-            return "player 1 won";
+            // return "Player 1 won";
+            answer+= "Player 1 won";
         }
         else if(this.state.btn2=== 2 && this.state.btn5=== 2 && this.state.btn8=== 2){
-            return "player 2 won";
+            // return "Player 2 won";
+            answer+= "Player 2 won";
         }
         //col2
         else if(this.state.btn3=== 1 && this.state.btn6=== 1 && this.state.btn9=== 1){
-            return "player 1 won";
+            // return "Player 1 won";
+            answer+= "Player 1 won";
         }
         else if(this.state.btn3=== 2 && this.state.btn6=== 2 && this.state.btn9=== 2){
-            return "player 2 won";
+            // return "Player 2 won";
+            answer+= "Player 2 won";
         }
         //col3
         else if(this.state.btn1=== 1 && this.state.btn5=== 1 && this.state.btn9=== 1){
-            return "player 1 won";
+            // return "Player 1 won";
+            answer+= "Player 1 won";
         }
         else if(this.state.btn1=== 2 && this.state.btn5=== 2 && this.state.btn9=== 2){
-            return "player 2 won";
+            // return "Player 2 won";
+            answer+= "Player 2 won";
         }//cross1
         else if(this.state.btn3=== 1 && this.state.btn5=== 1 && this.state.btn7=== 1){
-            return "player 1 won";
+            // return "Player 1 won";
+            answer+= "Player 1 won";
         }
         else if(this.state.btn3=== 2 && this.state.btn5=== 2 && this.state.btn7=== 2){
-            return "player 2 won";
+            // return "Player 2 won";
+            answer+= "Player 2 won";
         }//cross2
+        else if(this.state.clicks===9 && answer==="") {
+            answer+= "Tie hogaya bro";
+        }
         
         
         return ( 
             <div>
+                
+                    {/* <h3>Player 1 {this.state.winOf1}</h3> <h4>Player 2 {this.state.winOf2}</h4>  
+                    */}
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <button type="button" class="btn btn-info">
+                 <span>Number Of Matches Played : </span>
+                 <span className="badge badge-light "> { this.state.winOf1}</span>
+                </button>
+                </nav>
                 <div className="App">
                 <br/><br/><br/>
-                <h4>Press any button to start the game</h4>
+                <h4>Press any button to start the game noobs !</h4>
                 <br/><br/>
-                <h3>{this.state.clicks === 9 ? <span class="badge badge-light">Tie ho gaya bro</span> : 
-                <span class="badge badge-light">Come on noobs</span>}</h3>
+                {/* <h3>{this.state.clicks === 9 ? <span class="badge badge-light">{answer}</span> : 
+                <span class="badge badge-light">Come on noobs</span>}</h3> */}
+                <h3><span class="badge badge-light">{answer}</span></h3>
+                <br/>
                 
                 <button onClick={() => this.handelBtn1()} 
                     className={this.state.btn1clr}>{this.state.btn1}</button>
@@ -318,9 +356,14 @@ class Main extends Component {
                 
 
                 <button onClick={() => this.handlePlay()} className="btn btn-danger m-2">PLAY AGAIN</button>
-                <br/><br/><br/><br/>
-                <h6>Consider 1 as "X" and 2 as "O"</h6>
+                <br/><br/><br/>
                 </div>
+                <span className="badge badge-light offset-4"><h6>Instructions : </h6></span><br/>
+                <span className="offset-4"><span class="badge badge-dark">1 </span> Consider 1 as "X" and 2 as "O"</span><br/>
+                <span className="offset-4"><span class="badge badge-dark">2 </span> Every game will start from player 1 </span><br/>
+                <span className="offset-4"><span class="badge badge-dark">3 </span> Don't reload the game </span><br/>
+                <span className="offset-4"><span class="badge badge-dark">4 </span> CSS itna nahi lagaya kyoki boor maar raha tha </span><br/>
+                <span className="offset-4"><span class="badge badge-danger">5 </span> Code bohot ganda likha hai please matt dekhna</span>
             </div>
         );
     }
