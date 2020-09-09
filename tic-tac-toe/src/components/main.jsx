@@ -25,6 +25,15 @@ class Main extends Component {
         btn7clr : "m-2 btn btn-primary",
         btn8clr : "m-2 btn btn-primary",
         btn9clr : "m-2 btn btn-primary",
+        disable1 : false,
+        disable2 : false,
+        disable3 : false,
+        disable4 : false,
+        disable5 : false,
+        disable6 : false,
+        disable7 : false,
+        disable8 : false,
+        disable9 : false,
         winOf1: 0,
         winOf2: 0,
         
@@ -45,6 +54,15 @@ class Main extends Component {
        this.setState({btn7 : 0});
        this.setState({btn8 : 0});
        this.setState({btn9 : 0});
+       this.setState({disable1 : false});
+       this.setState({disable2 : false});
+       this.setState({disable3 : false});
+       this.setState({disable4 : false});
+       this.setState({disable5 : false});
+       this.setState({disable6 : false});
+       this.setState({disable7 : false});
+       this.setState({disable8 : false});
+       this.setState({disable9 : false});
        this.setState({btn1clr : "m-2 btn btn-primary"});
        this.setState({btn2clr : "m-2 btn btn-primary"});
        this.setState({btn3clr : "m-2 btn btn-primary"});
@@ -73,11 +91,13 @@ class Main extends Component {
         if((parseInt(this.state.clicks))%2===0) {
             this.setState({btn1 : 1});
             this.setState({btn1clr : "m-2 btn btn-warning"});
+            this.setState({disable1 : true});
             console.log("if called");
         }
         else {
             this.setState({btn1 : 2});
             this.setState({btn1clr : "m-2 btn btn-success"});
+            this.setState({disable1 : true});
             console.log("else called");
         }
 
@@ -95,10 +115,12 @@ class Main extends Component {
         if((parseInt(this.state.clicks))%2===0) {
             this.setState({btn2 : 1});
             this.setState({btn2clr : "m-2 btn btn-warning"});
+            this.setState({disable2 : true});
         }
         else {
             this.setState({btn2 : 2});
             this.setState({btn2clr : "m-2 btn btn-success"});
+            this.setState({disable2 : true});
         }
         console.log(this.state.btn2);
     }
@@ -114,10 +136,12 @@ class Main extends Component {
         if((parseInt(this.state.clicks))%2===0) {
             this.setState({btn3 : 1});
             this.setState({btn3clr : "m-2 btn btn-warning"});
+            this.setState({disable3 : true});
         }
         else {
             this.setState({btn3 : 2});
             this.setState({btn3clr : "m-2 btn btn-success"});
+            this.setState({disable3 : true});
         }
         console.log(this.state.btn3);
     }
@@ -133,10 +157,12 @@ class Main extends Component {
         if((parseInt(this.state.clicks))%2===0) {
             this.setState({btn4 : 1});
             this.setState({btn4clr : "m-2 btn btn-warning"});
+            this.setState({disable4 : true});
         }
         else {
             this.setState({btn4 : 2});
             this.setState({btn4clr : "m-2 btn btn-success"});
+            this.setState({disable4 : true});
         }
     }
 
@@ -151,10 +177,12 @@ class Main extends Component {
         if((parseInt(this.state.clicks))%2===0) {
             this.setState({btn5 : 1});
             this.setState({btn5clr : "m-2 btn btn-warning"});
+            this.setState({disable5 : true});
         }
         else {
             this.setState({btn5 : 2});
             this.setState({btn5clr : "m-2 btn btn-success"});
+            this.setState({disable5 : true});
         }
     }
 
@@ -169,10 +197,12 @@ class Main extends Component {
         if((parseInt(this.state.clicks))%2===0) {
             this.setState({btn6 : 1});
             this.setState({btn6clr : "m-2 btn btn-warning"});
+            this.setState({disable6 : true});
         }
         else {
             this.setState({btn6 : 2});
             this.setState({btn6clr : "m-2 btn btn-success"});
+            this.setState({disable6 : true});
         }
     }
 
@@ -187,10 +217,12 @@ class Main extends Component {
         if((parseInt(this.state.clicks))%2===0) {
             this.setState({btn7 : 1});
             this.setState({btn7clr : "m-2 btn btn-warning"});
+            this.setState({disable7 : true});
         }
         else {
             this.setState({btn7 : 2});
             this.setState({btn7clr : "m-2 btn btn-success"});
+            this.setState({disable7 : true});
         }
     }
 
@@ -205,10 +237,12 @@ class Main extends Component {
         if((parseInt(this.state.clicks))%2===0) {
             this.setState({btn8 : 1});
             this.setState({btn8clr : "m-2 btn btn-warning"});
+            this.setState({disable8 : true});
         }
         else {
             this.setState({btn8 : 2});
             this.setState({btn8clr : "m-2 btn btn-success"});
+            this.setState({disable8 : true});
         }
     }
 
@@ -223,10 +257,12 @@ class Main extends Component {
         if((parseInt(this.state.clicks))%2===0) {
             this.setState({btn9 : 1});
             this.setState({btn9clr : "m-2 btn btn-warning"});
+            this.setState({disable9 : true});
         }
         else {
             this.setState({btn9 : 2});
             this.setState({btn9clr : "m-2 btn btn-success"});
+            this.setState({disable9 : true});
         }
     }
 
@@ -318,40 +354,53 @@ class Main extends Component {
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <button type="button" class="btn btn-info">
                  <span>Number Of Matches Played : </span>
-                 <span className="badge badge-light "> { this.state.winOf1}</span>
+                 <span className="badge badge-light "> {this.state.winOf1}</span>
                 </button>
+                <div className="offset-3">
+                <div className="m-3">
+                <span class="badge badge-warning m-1">T</span>
+                <span class="badge badge-dark m-1">I</span>
+                <span class="badge badge-warning m-1">C</span>
+                <span class="badge badge-dark m-1">T</span>
+                <span class="badge badge-warning m-1">A</span>
+                <span class="badge badge-dark m-1">C</span>
+                <span class="badge badge-warning m-1">T</span>
+                <span class="badge badge-dark m-1">O</span>
+                <span class="badge badge-warning">E</span>
+                </div>
+                </div>
                 </nav>
                 <div className="App">
                 <br/><br/><br/>
                 <h4>Press any button to start the game noobs !</h4>
-                <br/><br/>
+                <br/>
                 {/* <h3>{this.state.clicks === 9 ? <span class="badge badge-light">{answer}</span> : 
                 <span class="badge badge-light">Come on noobs</span>}</h3> */}
                 <h3><span class="badge badge-light">{answer}</span></h3>
                 <br/>
                 
                 <button onClick={() => this.handelBtn1()} 
-                    className={this.state.btn1clr}>{this.state.btn1}</button>
+                    className={this.state.btn1clr} disabled={this.state.disable1}>{this.state.btn1}</button>
                 <button onClick={() => this.handelBtn2()} 
-                    className={this.state.btn2clr}>{this.state.btn2}</button>
+                    className={this.state.btn2clr} disabled={this.state.disable2}>{this.state.btn2}</button>
                 <button onClick={() => this.handelBtn3()} 
-                    className={this.state.btn3clr}>{this.state.btn3}</button>
+                    className={this.state.btn3clr} disabled={this.state.disable3}>{this.state.btn3}</button>
                 <br/>
                 
                 <button onClick={() => this.handelBtn4()} 
-                    className={this.state.btn4clr}>{this.state.btn4}</button>
+                    className={this.state.btn4clr} disabled={this.state.disable4}>{this.state.btn4}</button>
                 <button onClick={() => this.handelBtn5()} 
-                    className={this.state.btn5clr}>{this.state.btn5}</button>
+                    className={this.state.btn5clr} disabled={this.state.disable5}>{this.state.btn5}</button>
                 <button onClick={() => this.handelBtn6()} 
-                    className={this.state.btn6clr}>{this.state.btn6}</button>
+                    className={this.state.btn6clr} disabled={this.state.disable6}>{this.state.btn6}</button>
                 <br/>
 
                 <button onClick={() => this.handelBtn7()} 
-                    className={this.state.btn7clr}>{this.state.btn7}</button>
+                    className={this.state.btn7clr} disabled={this.state.disable7}>{this.state.btn7}</button>
                 <button onClick={() => this.handelBtn8()} 
-                    className={this.state.btn8clr}>{this.state.btn8}</button>
+                    className={this.state.btn8clr} disabled={this.state.disable8}>{this.state.btn8}</button>
                 <button onClick={() => this.handelBtn9()} 
-                    className={this.state.btn9clr}>{this.state.btn9}</button>
+                    className={this.state.btn9clr} disabled={this.state.disable9}>{this.state.btn9}</button>
                 <br/>
                 
 
