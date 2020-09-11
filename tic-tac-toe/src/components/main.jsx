@@ -16,15 +16,15 @@ class Main extends Component {
         btn7 : 0,
         btn8 : 0,
         btn9 : 0,
-        btn1clr : "m-2 btn btn-primary",
-        btn2clr : "m-2 btn btn-primary",
-        btn3clr : "m-2 btn btn-primary",
-        btn4clr : "m-2 btn btn-primary",
-        btn5clr : "m-2 btn btn-primary",
-        btn6clr : "m-2 btn btn-primary",
-        btn7clr : "m-2 btn btn-primary",
-        btn8clr : "m-2 btn btn-primary",
-        btn9clr : "m-2 btn btn-primary",
+        btn1clr : "m-2 btn btn-outline-primary",
+        btn2clr : "m-2 btn btn-outline-primary",
+        btn3clr : "m-2 btn btn-outline-primary",
+        btn4clr : "m-2 btn btn-outline-primary",
+        btn5clr : "m-2 btn btn-outline-primary",
+        btn6clr : "m-2 btn btn-outline-primary",
+        btn7clr : "m-2 btn btn-outline-primary",
+        btn8clr : "m-2 btn btn-outline-primary",
+        btn9clr : "m-2 btn btn-outline-primary",
         disable1 : false,
         disable2 : false,
         disable3 : false,
@@ -64,15 +64,15 @@ class Main extends Component {
        this.setState({disable7 : false});
        this.setState({disable8 : false});
        this.setState({disable9 : false});
-       this.setState({btn1clr : "m-2 btn btn-primary"});
-       this.setState({btn2clr : "m-2 btn btn-primary"});
-       this.setState({btn3clr : "m-2 btn btn-primary"});
-       this.setState({btn4clr : "m-2 btn btn-primary"});
-       this.setState({btn5clr : "m-2 btn btn-primary"});
-       this.setState({btn6clr : "m-2 btn btn-primary"});
-       this.setState({btn7clr : "m-2 btn btn-primary"});
-       this.setState({btn8clr : "m-2 btn btn-primary"});
-       this.setState({btn9clr : "m-2 btn btn-primary"});
+       this.setState({btn1clr : "m-2 btn btn-outline-primary"});
+       this.setState({btn2clr : "m-2 btn btn-outline-primary"});
+       this.setState({btn3clr : "m-2 btn btn-outline-primary"});
+       this.setState({btn4clr : "m-2 btn btn-outline-primary"});
+       this.setState({btn5clr : "m-2 btn btn-outline-primary"});
+       this.setState({btn6clr : "m-2 btn btn-outline-primary"});
+       this.setState({btn7clr : "m-2 btn btn-outline-primary"});
+       this.setState({btn8clr : "m-2 btn btn-outline-primary"});
+       this.setState({btn9clr : "m-2 btn btn-outline-primary"});
        
        this.setState({winOf1 : this.state.winOf1 + 1});
        
