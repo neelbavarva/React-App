@@ -267,6 +267,9 @@ class Main extends Component {
         }
     }
 
+    resetCount = () => {
+        this.setState({winOf1: 0});
+    }
     
 
     render() { 
@@ -372,8 +375,9 @@ class Main extends Component {
                  <span>Number Of Matches Played : </span>
                  <span className="badge badge-light "> {this.state.winOf1}</span>
                 </button>
-                <div className="offset-3">
-                <div className="m-3">
+                <button onClick={() => this.resetCount()} className="btn btn-success btn-sm m-3" disabled={this.state.winOf1===0}> Reset Count</button>
+                <div className="offset-2">
+                <div className="m-4">
                 <span className="badge badge-warning m-1">T</span>
                 <span className="badge badge-dark m-1">I</span>
                 <span className="badge badge-warning m-1">C</span>
