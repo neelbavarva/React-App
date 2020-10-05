@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 
 class Main extends Component {
 
+    // This code is very bekar
+
     state = {
         clicks : 0,
         tie : "",
