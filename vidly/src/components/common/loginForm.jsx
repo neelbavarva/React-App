@@ -1,24 +1,28 @@
 import React, { Component } from 'react';
 import Input from './input';
+import Joi from 'joi-browser';
 
 class LoginForm extends Component {
 
     state = {
         account : {username : '' , password : ''},
-        errors : {
+        errors : {}
+    };
 
-        }
+    schema = {
+        username: Joi.string().required().label("Username"),
+        password: Joi.string().required().label("Password")
     }
 
     validate = () => {
+        // const options = {absoluteEarly : false};
+        // const {error} = Joi.validate(this.state.account, this.schema, options);
+        const {error} = Joi.validate(this.state.account, this.schema);
+        if(!error) return null;
         const errors = {};
-        const{account} =this.state;
-        if(this.state.account.username.trim() ==='')
-            errors.username="Usernam required.";
-        if(this.state.account.password.trim() ==='')
-            errors.password="Password required.";
-        
-        return Object.keys(errors).length === 0 ? null : errors;
+        for(let item of error.details){
+            errors[item.path[0]] = item.message; }
+        return errors;
     }
     
     handleSubmit = e => {
@@ -28,16 +32,11 @@ class LoginForm extends Component {
         if(errors) return;
     }
 
-    validateProperty = input => {
-        if(input.name === 'username') {
-            if(input.value.trim() === '') return 'Username is required';
-            // ..
-        }
-
-        if(input.name === 'password') {
-            if(input.value.trim() === '') return 'Password is required';
-            // ..
-        }
+    validateProperty = ({name , value}) => {
+        const obj = { [name]: value };
+        const schema = { [name]: this.schema[name] };
+        const {error} = Joi.validate(obj, schema);
+        return error ? error.details[0].message : null;
     }
 
     handleChange = ({currentTarget: input}) => {
@@ -69,7 +68,7 @@ class LoginForm extends Component {
                            onChange={this.handleChange}
                            error={errors.password}
                     />
-                    <button className="btn btn-primary">Login</button>
+                    <button disabled={this.validate()} className="btn btn-primary">Login</button>
                 </form>
             </div>
           );
