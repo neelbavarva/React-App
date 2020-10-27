@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import Movies from './components/movies';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import Customers from "./components/customers";
@@ -17,7 +16,7 @@ function App() {
       <NavBar />
       <main className="container">
         <Switch>
-        <Route path="/register" component={RegisterForm} />
+          <Route path="/register" component={RegisterForm} />
           <Route path="/login" component={LoginForm} />
           <Route path="/movies/:id" component={MovieForm} />
           <Route path="/movies" component={Movies} />
